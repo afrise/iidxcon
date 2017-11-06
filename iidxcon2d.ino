@@ -15,9 +15,9 @@ class Turntable{
       else { c2--; if(c2<-2){up=false;/*Mouse.move(0,-1);*/c2=0;}}
       still=false;c=0;}
       if ((p==q)&&(n==o)&&(c>1000)){c=0; still=true;}
-      if (wasstill && !still) Keyboard.press('j'+up);
-      if (still){ Keyboard.release('j'+up); Keyboard.release('j'); }
-      if ((up2!=up)&&(c>200)){ Keyboard.release('k'-up); Keyboard.press('j'+up); c=0; }
+      if (wasstill && !still) Keyboard.press('k'+up);
+      if (still){ Keyboard.release('k'+up); Keyboard.release('j'); }
+      if ((up2!=up)&&(c>200)){ Keyboard.release('l'-up); Keyboard.press('k'+up); c=0; }
       q=p; up2=up; wasstill=still; c++;
   }
 };

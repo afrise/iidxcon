@@ -9,7 +9,6 @@ class Turntable{
   int c2=0;
   public:
   void update(void){
-    n = digitalReadFast(22);
     p = digitalReadFast(23);
     if ((q==1) && (p==0)) {
       if (digitalRead(22)){ c2++; if (c2>2){up=true;/*Mouse.move(0,1);*/c2=0;}}
@@ -19,7 +18,9 @@ class Turntable{
       if (wasstill && !still) Keyboard.press('j'+up);
       if (still){ Keyboard.release('j'+up); Keyboard.release('j'); }
       if ((up2!=up)&&(c>200)){ Keyboard.release('k'-up); Keyboard.press('j'+up); c=0; }
-      q=p; o=n; up2=up; wasstill=still; c++;}};
+      q=p; up2=up; wasstill=still; c++;
+  }
+};
 
 Turntable turntable;
  
